@@ -39,16 +39,16 @@ const sdkInit = async () => {
   const account = await container.account("botWallet");
 
   const accountBalance = account.getBalance();
-	
-	await accountBalance.listen();
 
-	accountBalance.onOrderUpdate((order) => {
-		console.info("Order update", order);
-	});
+  await accountBalance.listen();
 
-	accountBalance.onPositionUpdate((position) => {
-		console.info("Position update", position);
-	});
+  accountBalance.onOrderUpdate((order) => {
+    console.info("Order update", order);
+  });
+
+  accountBalance.onPositionUpdate((position) => {
+    console.info("Position update", position);
+  });
 
   console.info("Bot data", await account.fetchMe());
 
@@ -109,6 +109,12 @@ async function main() {
         timeInForce: evedexSdk.TimeInForce.FOK,
         leverage,
       });
+	
+			console.log(`Market buy order for ${pair} created`);
+			
+      tradingInProcess = false;
+
+      return;
     }, interval);
 
     process.on("SIGINT", () => {
