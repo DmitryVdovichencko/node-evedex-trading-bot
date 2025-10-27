@@ -1,0 +1,21 @@
+{
+  "name": "evedex-trading-bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dmitry Vdovichenko",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^24.9.1",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@evedex/exchange-bot-sdk": "^1.1.46",
+    "ws": "^8.18.3"
+  }
+}
